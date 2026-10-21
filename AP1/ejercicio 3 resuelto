@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe de notas</title>
+</head>
+<body>
+    <h1>Informe de notas</h1>
+
+    <script>
+        let alumnos = [
+            { nombre: "Ana", notas: [7, 8] },
+            { nombre: "Luis", notas: [4, 4.5] }
+        ];
+
+        for (let i = 0; i < alumnos.length; i++) {
+            let suma = 0;
+
+            for (let j = 0; j < alumnos[i].notas.length; j++) {
+                suma += alumnos[i].notas[j];
+            }
+
+            let media = suma / alumnos[i].notas.length;
+            let resultado;
+
+            if (media >= 5) {
+                resultado = "APROBADO";
+            } else {
+                resultado = "SUSPENSO";
+            }
+
+            document.write(alumnos[i].nombre +
+                " tiene una media de " +
+                media.toFixed(2) +
+                " y su resultado es " +
+                resultado + "<br>");
+        }
+    </script>
+</body>
+</html>
