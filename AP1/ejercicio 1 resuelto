@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Serie Fibonacci</title>
+</head>
+<body>
+    <h1>Serie de Fibonacci</h1>
+
+    <p id="serie"></p>
+    <p id="terminos"></p>
+    <p id="pares"></p>
+
+    <script>
+        let a = 0;
+        let b = 1;
+        let pares = 0;
+        let serie = [];
+
+        for (let i = 0; i < 10; i++) {
+            serie.push(a);
+
+            if (a % 2 == 0) {
+                pares++;
+            }
+
+            let siguiente = a + b;
+            a = b;
+            b = siguiente;
+        }
+
+        document.getElementById("serie").innerHTML =
+            "Serie: [" + serie.join(", ") + "]";
+
+        document.getElementById("terminos").innerHTML =
+            "Número de términos: " + serie.length;
+
+        document.getElementById("pares").innerHTML =
+            "Números pares: " + pares;
+    </script>
+</body>
+</html>
